@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'comment',
 
     # local
     'Accounts.apps.AccountsConfig',
@@ -169,4 +170,7 @@ REST_FRAMEWORK = {
 
 LOGIN_REDIRECT_URL = 'shop:home'
 ACCOUNT_LOGOUT_ON_GET = True
+LOGIN_URL = 'auth/login'
+
+COMMENT_FLAGS_ALLOWED = None
 

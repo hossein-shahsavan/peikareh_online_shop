@@ -11,7 +11,9 @@ from .serializers import CartSerializer
 @api_view()
 def detail(request):
     cart = Cart(request)
-    return Response(cart, status=status.HTTP_200_OK)
+    serializer = CartSerializer(data=cart)
+    serializer.is_valid()
+    return Response(serializer.validated_data, status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])

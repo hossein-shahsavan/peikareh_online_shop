@@ -16,7 +16,7 @@ class ProductAdmin(admin.ModelAdmin):
     raw_id_fields = ('category',)
 
 
-admin.site.register(Comment)
+# admin.site.register(Comment)
 
 
 

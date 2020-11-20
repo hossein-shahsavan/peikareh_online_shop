@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.contenttypes.fields import GenericRelation
+from comment.models import Comment
 from django .conf import settings
 
 
@@ -29,6 +31,7 @@ class Product(models.Model):
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    comments = GenericRelation(Comment)
 
     class Meta:
         ordering = ('-created',)
@@ -37,18 +40,8 @@ class Product(models.Model):
         return self.name
 
 
-class Comment(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True,blank=True, related_name='replys')
-    body = models.TextField()
-    created = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return f'{self.user} - {self.body[:30]}'
 
-    class Meta:
-        ordering = ('-created',)
 
 
 
