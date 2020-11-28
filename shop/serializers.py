@@ -17,13 +17,14 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = ['id', 'category', 'name', 'slug', 'image_1',
                   'image_2', 'image_3', 'image_4', 'image_5',
-                  'description', 'price', 'available', 'created', 'updated', 'comments']
+                  'description', 'price', 'available', 'created', 'updated',
+                  'popular', 'discount', 'comments']
         lookup_field = 'slug'
         extra_kwargs = {
             'url': {'lookup_field': 'slug'}
         }
 
     def get_comments(self, obj):
-        comments_qs = Comment.objects.filter_parents_by_object(obj)
+        comments_qs = Comment.objects.filter_parents_by_object(obj).order_by('posted')
         return CommentSerializer(comments_qs, many=True).data
 

@@ -3,17 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="2a070593-ceff-44c2-8b77-c1d7c3906685" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peikareh/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/peikareh/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peikareh/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/peikareh/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/migrations/0002_auto_20201110_0049.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/migrations/0003_auto_20201115_1821.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +115,14 @@
       <workItem from="1605640117128" duration="22000" />
       <workItem from="1605641213312" duration="1279000" />
       <workItem from="1605798610305" duration="6056000" />
-      <workItem from="1605897869220" duration="241000" />
+      <workItem from="1605897869220" duration="749000" />
+      <workItem from="1605909772631" duration="263000" />
+      <workItem from="1605973207733" duration="488000" />
+      <workItem from="1606228102221" duration="623000" />
+      <workItem from="1606338710638" duration="883000" />
+      <workItem from="1606399430279" duration="4212000" />
+      <workItem from="1606504973717" duration="5707000" />
+      <workItem from="1606573936683" duration="2400000" />
     </task>
     <servers />
   </component>

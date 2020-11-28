@@ -58,6 +58,7 @@ class Profile(models.Model):
     birth_day = models.DateField(null=True, blank=True)
     phone = models.CharField(max_length=11, null=True, blank=True)
     city = models.CharField(max_length=200, null=True, blank=True)
+    cart_number = models.PositiveBigIntegerField(null=True, blank=True)
 
     def __str__(self):
         return f'profile_ {self.user}'
