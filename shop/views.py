@@ -18,7 +18,7 @@ class search(generics.ListAPIView):
     serializer_class = ProductSerializer
     permission_classes = (permissions.AllowAny,)
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
-    filterset_class= ProductFilter
+    filterset_class = ProductFilter
     search_fields = ['name', 'category__name', 'description']
 
 

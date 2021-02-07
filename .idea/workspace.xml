@@ -2,16 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a070593-ceff-44c2-8b77-c1d7c3906685" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/migrations/0002_profile_cart_number.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/cart.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peikareh/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/peikareh/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peikareh/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/peikareh/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/migrations/0002_product_discount.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/migrations/0003_product_popular.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/migrations/0004_remove_category_slug.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,6 +42,43 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="Accounts_profile: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -36,8 +96,10 @@
   <component name="ProjectId" id="1jZDuyWk2bhgSeXmPsQ0jm6ugSr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Flask/todo" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -58,6 +120,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="peikareh.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -75,6 +138,16 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -123,6 +196,46 @@
       <workItem from="1606399430279" duration="4212000" />
       <workItem from="1606504973717" duration="5707000" />
       <workItem from="1606573936683" duration="2400000" />
+      <workItem from="1606583329742" duration="235000" />
+      <workItem from="1606604459475" duration="1057000" />
+      <workItem from="1606846954778" duration="749000" />
+      <workItem from="1606920923809" duration="10196000" />
+      <workItem from="1607007321885" duration="3448000" />
+      <workItem from="1607101201174" duration="3066000" />
+      <workItem from="1607112623045" duration="5043000" />
+      <workItem from="1607182659487" duration="1240000" />
+      <workItem from="1607422080758" duration="11687000" />
+      <workItem from="1607443676846" duration="4777000" />
+      <workItem from="1607518849061" duration="2085000" />
+      <workItem from="1607602487418" duration="10470000" />
+      <workItem from="1607693899802" duration="8550000" />
+      <workItem from="1607722406219" duration="8018000" />
+      <workItem from="1608305140564" duration="229000" />
+      <workItem from="1608501830745" duration="794000" />
+      <workItem from="1609008424699" duration="681000" />
+      <workItem from="1609075040591" duration="7780000" />
+      <workItem from="1609343111637" duration="9474000" />
+      <workItem from="1609364849313" duration="3569000" />
+      <workItem from="1609522775855" duration="4247000" />
+      <workItem from="1609606408801" duration="1442000" />
+      <workItem from="1609709504089" duration="964000" />
+      <workItem from="1609769333662" duration="1231000" />
+      <workItem from="1609864765563" duration="1252000" />
+      <workItem from="1610313370839" duration="1276000" />
+      <workItem from="1611092082679" duration="3606000" />
+      <workItem from="1611184602145" duration="1770000" />
+      <workItem from="1611938402340" duration="1423000" />
+      <workItem from="1611954608733" duration="4870000" />
+      <workItem from="1612023909519" duration="3480000" />
+      <workItem from="1612038628319" duration="6133000" />
+      <workItem from="1612112347872" duration="7714000" />
+      <workItem from="1612211046816" duration="5780000" />
+      <workItem from="1612269323780" duration="6749000" />
+      <workItem from="1612390503913" duration="667000" />
+      <workItem from="1612539603391" duration="333000" />
+      <workItem from="1612545749661" duration="2492000" />
+      <workItem from="1612649751079" duration="3034000" />
+      <workItem from="1612710065144" duration="4178000" />
     </task>
     <servers />
   </component>

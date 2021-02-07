@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 
@@ -21,11 +22,14 @@ admin.site.enable_nav_sidebar = False
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-    path('dashboard/', include('Accounts.urls', namespace='dashboard')),
-    path('auth/', include('rest_auth.urls')),
-    path('auth/registration/', include('rest_auth.registration.urls')),
-    path('cart/', include('cart.urls', namespace='cart')),
-    path('api/', include('comment.api.urls')),
+    path('account/', include('Accounts.urls', namespace='accounts')),
+    path('articles/', include('article.urls', namespace='articles')),
+    path('order/', include('order.urls', namespace='order')),
+    path('comments/', include('comment.api.urls')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('shop.urls', namespace='shop')),
 ]
+
+admin.site.site_header = 'Peikareh Admin Panel'
+admin.site.site_title = 'Peikareh Administration'
+admin.site.index_title = 'Welcome To Peikareh Administration'

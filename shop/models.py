@@ -19,12 +19,16 @@ class Product(models.Model):
     category = models.ManyToManyField(Category, related_name='products')
     name = models.CharField(max_length=500)
     slug = models.SlugField(max_length=500, allow_unicode=True, unique=True)
+    page_title = models.CharField(max_length=200, null=True, blank=True)  # for seo
+    page_description = models.TextField(null=True, blank=True)  # for seo
     image_1 = models.ImageField(upload_to='products_pic/%Y/%m/%d/', null=True, blank=True)
     image_2 = models.ImageField(upload_to='products_pic/%Y/%m/%d/', null=True, blank=True)
     image_3 = models.ImageField(upload_to='products_pic/%Y/%m/%d/', null=True, blank=True)
     image_4 = models.ImageField(upload_to='products_pic/%Y/%m/%d/', null=True, blank=True)
     image_5 = models.ImageField(upload_to='products_pic/%Y/%m/%d/', null=True, blank=True)
     description = models.TextField(null=True, blank=True)
+    attribute = models.JSONField(null=True, blank=True,
+                                 help_text='in this format: {"key" : "value", "key2" : "value2"}')
     price = models.PositiveIntegerField()
     discount = models.PositiveIntegerField(null=True, blank=True)
     available = models.BooleanField(default=True)
@@ -38,10 +42,3 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-
-
-
-
-
-
-
