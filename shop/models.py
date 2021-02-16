@@ -19,13 +19,18 @@ class Product(models.Model):
     category = models.ManyToManyField(Category, related_name='products')
     name = models.CharField(max_length=500)
     slug = models.SlugField(max_length=500, allow_unicode=True, unique=True)
-    page_title = models.CharField(max_length=200, null=True, blank=True)  # for seo
-    page_description = models.TextField(null=True, blank=True)  # for seo
+    page_title = models.CharField(max_length=200, null=True, blank=True, help_text='used for seo')  # for seo
+    page_description = models.TextField(null=True, blank=True, help_text='used for seo')  # for seo
     image_1 = models.ImageField(upload_to='products_pic/%Y/%m/%d/', null=True, blank=True)
+    alt_1 = models.CharField(max_length=200, null=True, blank=True, help_text='used for seo')
     image_2 = models.ImageField(upload_to='products_pic/%Y/%m/%d/', null=True, blank=True)
+    alt_2 = models.CharField(max_length=200, null=True, blank=True, help_text='used for seo')
     image_3 = models.ImageField(upload_to='products_pic/%Y/%m/%d/', null=True, blank=True)
+    alt_3 = models.CharField(max_length=200, null=True, blank=True, help_text='used for seo')
     image_4 = models.ImageField(upload_to='products_pic/%Y/%m/%d/', null=True, blank=True)
+    alt_4 = models.CharField(max_length=200, null=True, blank=True, help_text='used for seo')
     image_5 = models.ImageField(upload_to='products_pic/%Y/%m/%d/', null=True, blank=True)
+    alt_5 = models.CharField(max_length=200, null=True, blank=True, help_text='used for seo')
     description = models.TextField(null=True, blank=True)
     attribute = models.JSONField(null=True, blank=True,
                                  help_text='in this format: {"key" : "value", "key2" : "value2"}')

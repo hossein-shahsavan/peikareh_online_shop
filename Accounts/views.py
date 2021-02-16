@@ -1,8 +1,9 @@
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
-from rest_framework.status import HTTP_200_OK
+from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST, HTTP_500_INTERNAL_SERVER_ERROR
 
-from .serializers import CreateUserSerializer, LoginUserSerializer, UserSerializer, ForgetPasswordSerializer, AddressSerializer
+from .serializers import CreateUserSerializer, LoginUserSerializer, UserSerializer, ForgetPasswordSerializer, \
+    AddressSerializer
 
 from .permissions import IsOwner
 
@@ -36,19 +37,19 @@ class AddressListView(generics.ListAPIView):
 
 
 class AddressCreateView(generics.CreateAPIView):
-    permission_classes = (permissions.IsAuthenticated, )
+    permission_classes = (permissions.IsAuthenticated,)
     serializer_class = AddressSerializer
     queryset = Address.objects.all()
 
 
 class AddressUpdateView(generics.UpdateAPIView):
-    permission_classes = (permissions.IsAuthenticated, )
+    permission_classes = (permissions.IsAuthenticated,)
     serializer_class = AddressSerializer
     queryset = Address.objects.all()
 
 
 class AddressDeleteView(generics.DestroyAPIView):
-    permission_classes = (permissions.IsAuthenticated, )
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = Address.objects.all()
 
 
@@ -75,7 +76,7 @@ class ValidatePhoneSendOTP(APIView):
             phone = str(phone_number)
             user = User.objects.filter(phone__iexact=phone)
             if user.exists():
-                return Response({'status': False, 'detail': 'Phone Number already exists'})
+                return Response({'detail': 'Phone Number already exists'}, status=HTTP_400_BAD_REQUEST)
                 # logic to send the otp and store the phone number and that otp in table.
             else:
                 otp = randint(9999, 99999)
@@ -93,40 +94,44 @@ class ValidatePhoneSendOTP(APIView):
                             Count=count,
 
                         )
-                        sendOTP(otp, phone=None)
+                        sendOTP(phone, otp)
 
                     else:
                         count = old[0].Count
                         old[0].Count = count + 1
                         old[0].otp = otp
                         old[0].save()
-                        sendOTP(otp, phone=None)
+                        sendOTP(phone, otp)
 
-                    if count > 7:
+                    if count > 4:
                         return Response({
-                            'status': False,
                             'detail': 'Maximum otp limits reached. Kindly support our customer care or try with different number'
-                        })
+                        },
+                            status=HTTP_500_INTERNAL_SERVER_ERROR
+                        )
 
 
                 else:
                     return Response({
                         'status': 'False', 'detail': "OTP sending error. Please try after some time."
-                    })
+                    }, status=HTTP_400_BAD_REQUEST
+                    )
 
                 return Response({
                     'status': True, 'detail': 'Otp has been sent successfully.'
-                })
+                }, status=HTTP_200_OK
+                )
         else:
             return Response({
                 'status': 'False', 'detail': "I haven't received any phone number. Please do a POST request."
-            })
+            }, status=HTTP_400_BAD_REQUEST
+            )
 
 
-def sendOTP(otp, phone=None):
+def sendOTP(phone, otp):
     api = KavenegarAPI(
-        '7351315847785361446D6F6C39744E582F56503434687043676E375251366C3564553968784435554653773D')
-    params = {'receptor': '09220489835',
+        '43524A676D5230483251434F3533366A58623232456A522B6D786634746654464F4756426A45584C374C773D')
+    params = {'receptor': phone,
               'template': 'verification',
               'token': otp,
               'type': 'sms vs call'
@@ -156,24 +161,28 @@ class ValidateOTP(APIView):
                     return Response({
                         'status': True,
                         'detail': 'OTP matched, Please proceed to save password'
-                    })
+                    }, status=HTTP_200_OK
+                    )
                 else:
                     return Response({
                         'status': False,
                         'detail': 'OTP incorrect, please try again'
-                    })
+                    }, status=HTTP_400_BAD_REQUEST
+                    )
             else:
                 return Response({
                     'status': False,
                     'detail': 'Phone not recognised. Please request a new otp with this number'
-                })
+                }, status=HTTP_400_BAD_REQUEST
+                )
 
 
         else:
             return Response({
                 'status': 'False',
                 'detail': 'Either phone or otp was not recieved in Post request'
-            })
+            }, status=HTTP_400_BAD_REQUEST
+            )
 
 
 class Register(APIView):
@@ -188,7 +197,8 @@ class Register(APIView):
             user = User.objects.filter(phone__iexact=phone)
             if user.exists():
                 return Response({'status': False,
-                                 'detail': 'Phone Number already have account associated. Kindly try forgot password'})
+                                 'detail': 'Phone Number already have account associated. Kindly try forgot password'},
+                                status=HTTP_400_BAD_REQUEST)
             else:
                 old = PhoneOTP.objects.filter(phone__iexact=phone)
                 if old.exists():
@@ -204,20 +214,23 @@ class Register(APIView):
                         old.delete()
                         return Response({
                             'status': True,
-                            'detail': 'Congrts, user has been created successfully.'
-                        })
+                            'detail': 'Congrats, user has been created successfully.'
+                        }, status=HTTP_200_OK
+                        )
 
                     else:
                         return Response({
                             'status': False,
                             'detail': 'Your otp was not verified earlier. Please go back and verify otp'
 
-                        })
+                        }, status=HTTP_400_BAD_REQUEST
+                        )
                 else:
                     return Response({
                         'status': False,
                         'detail': 'Phone number not recognised. Kindly request a new otp with this number'
-                    })
+                    }, status=HTTP_400_BAD_REQUEST
+                    )
 
 
 
@@ -227,7 +240,8 @@ class Register(APIView):
             return Response({
                 'status': 'False',
                 'detail': 'Either phone or password was not recieved in Post request'
-            })
+            }, status=HTTP_400_BAD_REQUEST
+            )
 
 
 class ValidatePhoneForgotPassword(APIView):
@@ -254,41 +268,45 @@ class ValidatePhoneForgotPassword(APIView):
                             Count=count,
                             forgot=True,
                         )
-                        send_OTP_forget(otp, phone=None)
-                        return Response({'status': True, 'detail': 'OTP has been sent for password reset'})
+                        send_OTP_forget(phone, otp)
+                        return Response({'status': True, 'detail': 'OTP has been sent for password reset'},
+                                        status=HTTP_200_OK)
 
                     else:
                         if old[0].Count >= 3:
                             return Response({
                                 'status': False,
                                 'detail': 'Maximum otp limits reached. Kindly support our customer care or try with different number'
-                            })
+                            }, status=HTTP_500_INTERNAL_SERVER_ERROR
+                            )
                         else:
                             count = old[0].Count
                             old[0].Count = count + 1
                             old[0].otp = otp
                             old[0].save()
-                            send_OTP_forget(otp, phone=None)
+                            send_OTP_forget(phone, otp)
                             return Response(
                                 {'status': True,
-                                 'detail': 'OTP has been sent for password reset. Limits about to reach.'})
+                                 'detail': 'OTP has been sent for password reset. Limits about to reach.'},
+                                status=HTTP_200_OK)
 
                 else:
                     return Response({
                         'status': 'False', 'detail': "OTP sending error. Please try after some time."
-                    })
+                    }, status=HTTP_400_BAD_REQUEST
+                    )
             else:
                 return Response({
                     'status': False,
                     'detail': 'Phone number not recognised. Kindly try a new account for this number'
-                })
+                }, status=HTTP_400_BAD_REQUEST)
 
 
-def send_OTP_forget(otp, phone=None):
+def send_OTP_forget(phone, otp):
     api = KavenegarAPI(
-        '7351315847785361446D6F6C39744E582F56503434687043676E375251366C3564553968784435554653773D')
-    params = {'receptor': '09220489835',
-              'template': 'verification',
+        '43524A676D5230483251434F3533366A58623232456A522B6D786634746654464F4756426A45584C374C773D')
+    params = {'receptor': phone,
+              'template': 'ResetPassword',
               'token': otp,
               'type': 'sms vs call'
               }
@@ -313,7 +331,8 @@ class ValidateOTPForgetPassword(APIView):
                     return Response({
                         'status': False,
                         'detail': 'This phone havenot send valid otp for forgot password. Request a new otp or contact help centre.'
-                    })
+                    }, status=HTTP_400_BAD_REQUEST
+                    )
 
                 otp = old.otp
                 if str(otp) == str(otp_sent):
@@ -323,23 +342,24 @@ class ValidateOTPForgetPassword(APIView):
                     return Response({
                         'status': True,
                         'detail': 'OTP matched, kindly proceed to create new password'
-                    })
+                    }, status=HTTP_200_OK)
                 else:
                     return Response({
                         'status': False,
                         'detail': 'OTP incorrect, please try again'
-                    })
+                    }, status=HTTP_400_BAD_REQUEST)
             else:
                 return Response({
                     'status': False,
                     'detail': 'Phone not recognised. Kindly request a new otp with this number'
-                })
+                }, status=HTTP_400_BAD_REQUEST
+                )
 
         else:
             return Response({
                 'status': 'False',
                 'detail': 'Either phone or otp was not recieved in Post request'
-            })
+            }, status=HTTP_400_BAD_REQUEST)
 
 
 class ForgetPasswordChange(APIView):
@@ -372,22 +392,22 @@ class ForgetPasswordChange(APIView):
                         return Response({
                             'status': True,
                             'detail': 'Password changed successfully. Please Login'
-                        })
+                        },status=HTTP_200_OK)
 
                 else:
                     return Response({
                         'status': False,
                         'detail': 'OTP Verification failed. Please try again in previous step'
-                    })
+                    }, status=HTTP_400_BAD_REQUEST)
 
             else:
                 return Response({
                     'status': False,
                     'detail': 'Phone and otp are not matching or a new phone has entered. Request a new otp in forgot password'
-                })
+                }, status=HTTP_400_BAD_REQUEST)
 
         else:
             return Response({
                 'status': False,
-                'detail': 'Post request have parameters mising.'
-            })
+                'detail': 'Post request have parameters missing.'
+            }, status=HTTP_400_BAD_REQUEST)

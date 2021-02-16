@@ -2,40 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a070593-ceff-44c2-8b77-c1d7c3906685" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/migrations/0002_profile_cart_number.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Accounts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/cart.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/order/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peikareh/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/peikareh/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peikareh/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/peikareh/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/migrations/0002_product_discount.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/migrations/0003_product_popular.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/migrations/0004_remove_category_slug.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,12 +70,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jZDuyWk2bhgSeXmPsQ0jm6ugSr" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Flask/todo" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -235,7 +213,13 @@
       <workItem from="1612539603391" duration="333000" />
       <workItem from="1612545749661" duration="2492000" />
       <workItem from="1612649751079" duration="3034000" />
-      <workItem from="1612710065144" duration="4178000" />
+      <workItem from="1612710065144" duration="4727000" />
+      <workItem from="1612716704914" duration="644000" />
+      <workItem from="1612734955920" duration="684000" />
+      <workItem from="1612815761101" duration="1166000" />
+      <workItem from="1612974176363" duration="599000" />
+      <workItem from="1613401707091" duration="4055000" />
+      <workItem from="1613490767561" duration="5612000" />
     </task>
     <servers />
   </component>

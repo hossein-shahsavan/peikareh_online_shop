@@ -28,8 +28,8 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser):
     username = None
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=200)
+    first_name = models.CharField(max_length=100, null=True, blank=True)
+    last_name = models.CharField(max_length=200, null=True, blank=True)
     phone_regex = RegexValidator(regex=r'^09(\d{9})$',
                                  message="Phone number must be entered in the format: '09111111111'")
     phone = models.CharField(validators=[phone_regex], max_length=11, unique=True)
@@ -54,9 +54,9 @@ class User(AbstractBaseUser):
     def has_module_perms(self, app_label):
         return True
 
-    @property
-    def full_name(self):
-        return self.first_name + ' ' + self.last_name
+    # @property
+    # def full_name(self):
+    #     return self.first_name + ' ' + self.last_name
 
     @property
     def is_staff(self):
