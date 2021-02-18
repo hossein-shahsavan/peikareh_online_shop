@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_auth',
     'ckeditor',
     'ckeditor_uploader',
+    'drf_yasg',
     'comment',
 
     # local

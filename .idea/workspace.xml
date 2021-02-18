@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2a070593-ceff-44c2-8b77-c1d7c3906685" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peikareh/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/peikareh/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peikareh/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/peikareh/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/serializers.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -219,7 +213,8 @@
       <workItem from="1612815761101" duration="1166000" />
       <workItem from="1612974176363" duration="599000" />
       <workItem from="1613401707091" duration="4055000" />
-      <workItem from="1613490767561" duration="5612000" />
+      <workItem from="1613490767561" duration="5978000" />
+      <workItem from="1613661224735" duration="234000" />
     </task>
     <servers />
   </component>
