@@ -9,12 +9,28 @@ services:
       - .:/peikareh
       - peikareh_static_volume:/peikare/static
     restart: always
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
     networks:
       - peikareh_network
+      - nginx
     depends_on:
       - postgresql
+
+  nginx:
+    container_name: nginx
+    command: nginx -g 'daemon off;'
+    depends_on:
+      - peikareh
+    image: nginx:latest
+    networks:
+      - nginx
+    ports:
+      - "80:80"
+    restart: on-failure
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
 
   postgresql:
     image: postgres:latest
@@ -33,4 +49,5 @@ volumes:
   peikareh_static_volume:
 networks:
   peikareh_network:
+  nginx:
 

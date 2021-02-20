@@ -25,7 +25,7 @@ SECRET_KEY = '$06u-g56k%m-v*oa%-%^l4geqb2tt0u5t(7)nl6+wejw15&vh='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -99,7 +99,7 @@ DATABASES = {
 
         'PASSWORD': 'password',
 
-        # 'HOST': 'postgresql',
+        'HOST': 'postgresql',
 
         'PORT': '5432',
     }
@@ -156,6 +156,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

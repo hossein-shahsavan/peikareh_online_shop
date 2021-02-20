@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2a070593-ceff-44c2-8b77-c1d7c3906685" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peikareh/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/peikareh/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peikareh/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/peikareh/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +51,9 @@
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="peikareh" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -214,7 +216,10 @@
       <workItem from="1612974176363" duration="599000" />
       <workItem from="1613401707091" duration="4055000" />
       <workItem from="1613490767561" duration="5978000" />
-      <workItem from="1613661224735" duration="234000" />
+      <workItem from="1613661224735" duration="890000" />
+      <workItem from="1613745370046" duration="6877000" />
+      <workItem from="1613766432047" duration="4677000" />
+      <workItem from="1613837291432" duration="2083000" />
     </task>
     <servers />
   </component>
