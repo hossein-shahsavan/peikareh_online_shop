@@ -5,6 +5,7 @@ from comment.models import Comment
 
 class Category(models.Model):
     name = models.CharField(max_length=400)
+    slug = models.SlugField(max_length=400, allow_unicode=True, unique=True)
 
     class Meta:
         ordering = ('name',)

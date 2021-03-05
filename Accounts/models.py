@@ -5,21 +5,26 @@ from django.conf import settings
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, phone, password=None):
+    def create_user(self, phone, first_name, last_name, password=None):
         if not phone:
             raise ValueError('لطفا شماره موبایل خود را وارد کنید.')
         else:
             user = self.model(
                 phone=phone,
+                first_name=first_name,
+                last_name=last_name
+
             )
             user.set_password(password)
             user.save(using=self._db)
             return user
 
-    def create_superuser(self, phone, password=None):
+    def create_superuser(self, phone, first_name, last_name, password=None):
         user = self.create_user(
             phone=phone,
             password=password,
+            first_name=first_name,
+            last_name=last_name
         )
         user.is_admin = True
         user.save(using=self._db)
@@ -28,8 +33,8 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser):
     username = None
-    first_name = models.CharField(max_length=100, null=True, blank=True)
-    last_name = models.CharField(max_length=200, null=True, blank=True)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=200)
     phone_regex = RegexValidator(regex=r'^09(\d{9})$',
                                  message="Phone number must be entered in the format: '09111111111'")
     phone = models.CharField(validators=[phone_regex], max_length=11, unique=True)
@@ -43,7 +48,7 @@ class User(AbstractBaseUser):
     objects = UserManager()
 
     USERNAME_FIELD = 'phone'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['first_name', 'last_name']
 
     def __str__(self):
         return self.phone
@@ -54,9 +59,9 @@ class User(AbstractBaseUser):
     def has_module_perms(self, app_label):
         return True
 
-    # @property
-    # def full_name(self):
-    #     return self.first_name + ' ' + self.last_name
+    @property
+    def full_name(self):
+        return self.first_name + ' ' + self.last_name
 
     @property
     def is_staff(self):

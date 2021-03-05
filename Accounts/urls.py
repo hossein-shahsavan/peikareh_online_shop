@@ -17,7 +17,6 @@ urlpatterns = [
     path('address/create/', views.AddressCreateView.as_view(), name='address_create'),
     path('address/<pk>/update/', views.AddressUpdateView.as_view(), name='address_update'),
     path('address/<pk>/delete/', views.AddressDeleteView.as_view(), name='address_delete'),
-    path('user_id/', views.UserIDView.as_view(), name='user_id'),
     path('<int:pk>/', views.UserRetrieveUpdateView.as_view(), name='dashboard'),
 
 ]

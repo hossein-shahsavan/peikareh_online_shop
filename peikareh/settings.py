@@ -99,7 +99,7 @@ DATABASES = {
 
         'PASSWORD': 'password',
 
-        'HOST': 'postgresql',
+        # 'HOST': 'postgresql',
 
         'PORT': '5432',
     }
@@ -257,5 +257,6 @@ COMMENT_FLAGS_ALLOWED = None
 
 REST_AUTH_SERIALIZERS = {
     'LOGIN_SERIALIZER': 'Accounts.serializers.LoginUserSerializer',
+    'TOKEN_SERIALIZER': 'Accounts.serializers.TokenSerializer',
 }
 

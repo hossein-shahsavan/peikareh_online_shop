@@ -29,12 +29,17 @@ class RetrieveProductView(generics.RetrieveAPIView):
     lookup_field = 'slug'
 
 
+class ProductCategoryFilterView(generics.ListAPIView):
+    serializer_class = ProductSerializer
+    permission_classes = (permissions.AllowAny,)
+
+    def get_queryset(self):
+        return Product.objects.filter(category__slug=self.kwargs.get('slug'))
 
 
-
-
-
-
-
+class ProductPopularFilterView(generics.ListAPIView):
+    queryset = Product.objects.filter(available=True, popular=True)
+    serializer_class = ProductSerializer
+    permission_classes = (permissions.AllowAny,)
 
 

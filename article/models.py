@@ -14,3 +14,6 @@ class Article(models.Model):
 
     def __str__(self):
         return self.article_title
+
+    class Meta:
+        ordering = ('-created',)

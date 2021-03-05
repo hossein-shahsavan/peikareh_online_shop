@@ -5,7 +5,7 @@ from django.contrib.auth.models import Group
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('phone', 'first_name', 'last_name', 'email', 'is_admin', 'is_active')
+    list_display = ('phone', 'full_name', 'email', 'is_admin', 'is_active')
     list_filter = ('is_admin', 'is_active')
     search_fields = ('phone', 'full_name')
 

@@ -18,7 +18,7 @@ class ArticleDetail(generics.RetrieveAPIView):
 
 
 class NewestArticles(generics.ListAPIView):
-    queryset = Article.objects.filter(show=True).order_by('-created')[:5]
+    queryset = Article.objects.filter(show=True).order_by('-created')[:4]
     serializer_class = ArticleSerializer
     permission_classes = (AllowAny,)
 

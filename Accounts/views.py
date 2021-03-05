@@ -5,7 +5,7 @@ from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST, HTTP_500_IN
 from .serializers import CreateUserSerializer, LoginUserSerializer, UserSerializer, ForgetPasswordSerializer, \
     AddressSerializer
 
-from .permissions import IsOwner
+from .permissions import OwnerProfile
 
 from rest_framework import generics, permissions
 from rest_framework.response import Response
@@ -20,12 +20,7 @@ from rest_framework.views import APIView
 class UserRetrieveUpdateView(generics.RetrieveUpdateAPIView):
     queryset = User.objects.filter(is_active=True)
     serializer_class = UserSerializer
-    permission_classes = (IsOwner,)
-
-
-class UserIDView(APIView):
-    def get(self, request, *args, **kwargs):
-        return Response({'userID': request.user.id}, status=HTTP_200_OK)
+    permission_classes = (OwnerProfile,)
 
 
 class AddressListView(generics.ListAPIView):
@@ -191,6 +186,8 @@ class Register(APIView):
     def post(self, request, *args, **kwargs):
         phone = request.data.get('phone', False)
         password = request.data.get('password', False)
+        first_name = request.data.get('first_name', False)
+        last_name = request.data.get('last_name', False)
 
         if phone and password:
             phone = str(phone)
@@ -204,7 +201,8 @@ class Register(APIView):
                 if old.exists():
                     old = old.first()
                     if old.logged:
-                        Temp_data = {'phone': phone, 'password': password}
+                        Temp_data = {'phone': phone, 'password': password,
+                                     'first_name': first_name, 'last_name': last_name}
 
                         serializer = CreateUserSerializer(data=Temp_data)
                         serializer.is_valid(raise_exception=True)
@@ -245,8 +243,9 @@ class Register(APIView):
 
 
 class ValidatePhoneForgotPassword(APIView):
-    '''
-    Validate if account is there for a given phone number and then send otp for forgot password reset'''
+    """
+    Validate if account is there for a given phone number and then send otp for forgot password reset
+    """
 
     def post(self, request, *args, **kwargs):
         phone_number = request.data.get('phone')
